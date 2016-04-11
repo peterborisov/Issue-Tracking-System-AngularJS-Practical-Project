@@ -1,0 +1,39 @@
+
+.border {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+.margin-top-100 {
+  margin-top: 20px;
+}
+
+body {
+  background: lightgrey;
+  .col-md-3, .col-md-4 {
+    background: #fff;
+    border-radius: 5px;
+  }
+  .main {
+    margin: 0px auto;
+    width: 80%;
+    #mainH1 {
+      font-family: "Bookman", Georgia, "Times New Roman", serif;
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-family: "Copperplate Gothic", sans-serif;
+      margin:0px 0px 10px 0px;
+      font-size: 30px;
+    }
+    label{
+      margin-top: 10px;
+    }
+    button {
+      margin: 20px 0px;
+      width: 150px;
+    }
+  }
+}
