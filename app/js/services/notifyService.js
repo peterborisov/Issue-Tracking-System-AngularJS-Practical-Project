@@ -8,7 +8,7 @@ app.factory('notifyService',
                         text: msg,
                         type: 'success',
                         layout: 'top',
-                        timeout: 3500}
+                        timeout: 2500}
                 );
             },
             showError: function(msg, serverError) {

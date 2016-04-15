@@ -28,6 +28,14 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
             headers: this.getHeaders()
         })
     };
+    
+    authenticationService.getAllUsers = function () {
+        return $http({
+            method: 'GET',
+            url: BASE_URL + '/users/',
+            headers: this.getHeaders()
+        })
+    };
 
     authenticationService.login = function (user) {
         return $http({

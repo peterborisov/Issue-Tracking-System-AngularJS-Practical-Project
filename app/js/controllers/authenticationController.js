@@ -7,7 +7,7 @@ app.controller('AuthenticationController',
                 authenticationService.getCurrentUserData().then(
                     function (userData) {
                         usSpinnerService.stop('spinner-1');
-                        $scope.userData =userData.data;
+                        $scope.userData = userData.data;
                     },
                     function (error) {
                         notifyService.showError('Unable to get current user data. ' + error.data.message);
@@ -65,18 +65,50 @@ app.controller('AuthenticationController',
             );
         };
 
-           $scope.changePassword = function (userData) {
-               usSpinnerService.spin('spinner-1');
-               authenticationService.changePassword(userData).then(
-                   function success() {
-                       usSpinnerService.stop('spinner-1');
-                       notifyService.showInfo('Your password has been successfully changed');
-                       $location.path('/');
-                   },
-                   function error(error) {
-                       notifyService.showError('Unable to change password. ' + error.data.message);
-                       usSpinnerService.stop('spinner-1');
-                   }
-               )
-           }
+        $scope.changePassword = function (userData) {
+            usSpinnerService.spin('spinner-1');
+            authenticationService.changePassword(userData).then(
+                function success() {
+                    usSpinnerService.stop('spinner-1');
+                    notifyService.showInfo('Your password has been successfully changed');
+                    $location.path('/');
+                },
+                function error(error) {
+                    notifyService.showError('Unable to change password. ' + error.data.message);
+                    usSpinnerService.stop('spinner-1');
+                }
+            )
+        };
+
+        $scope.getAllUsers = function (userData) {
+            usSpinnerService.spin('spinner-1');
+            authenticationService.getAllUsers(userData).then(
+                function success() {
+                    usSpinnerService.stop('spinner-1');
+                    notifyService.showInfo('All users');
+                    $location.path('/get-all-users');
+                },
+                function error(error) {
+                    notifyService.showError('Unable to get all users. ' + error.data.message);
+                    usSpinnerService.stop('spinner-1');
+                }
+            )
+        }
+
+        $scope.getUserFullData = function getUserFullData() {
+            usSpinnerService.spin('spinner-1');
+            authenticationService.getUserFullData($routeParams.username).then(
+                function (userData) {
+                    $scope.username=userData.name;
+                    $scope.userFullData = userData.data;
+                    usSpinnerService.stop('spinner-1');
+                    $location.path('/');
+                },
+                function (error) {
+                    notifyService.showError('Unable to show user data' + error.data.message);
+                    usSpinnerService.stop('spinner-1');
+                }
+            )
+        };
+
     });

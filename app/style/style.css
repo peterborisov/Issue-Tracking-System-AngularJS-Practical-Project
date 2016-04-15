@@ -19,6 +19,9 @@
 .home-background-image {
   max-width: 100%; }
 
+.well, .jumbotron {
+  margin-top: 100px; }
+
 body {
   background: lightgrey; }
   body .col-md-3, body .col-md-4 {

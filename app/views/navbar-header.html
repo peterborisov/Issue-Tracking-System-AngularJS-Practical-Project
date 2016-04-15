@@ -9,8 +9,13 @@
             </ul>
 
             <ul ng-if="isLogged" class="nav navbar-nav navbar-right">
+                <li class="header-data" ng-init="userData()">
+                    <a href="#/users/me">
+                       Current User
+                    </a>
+                </li>
                 <ul class="nav navbar-nav">
-                    <li class="site-logo"><a href="#/">Issue Tracking System</a></li>
+                    <li class="site-logo"><a href="#/users">Users</a></li>
                 </ul>
                 <li role="presentation" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -22,6 +27,7 @@
                     </ul>
                 </li>
                 <li>
+
                 <li><a href="#/home">Home</a></li>
                 </li>
                 <li><a href="#/logout" ng-click="logout()">Logout</a></li>

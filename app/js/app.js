@@ -10,13 +10,12 @@ var app = angular.module('issueTracking', ['ngRoute', 'ngResource', 'naif.base64
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-        .when('/home', {
-            templateUrl: 'views/user/dashboard.html',
-            controller: 'HomeController'
-        })
         .when('/', {
-            templateUrl: 'views/home.html',
-
+            templateUrl: 'views/home.html'
+        })
+        .when('/home', {
+            templateUrl: 'views/dashboard.html',
+            controller: 'HomeController'
         })
         .when('/login', {
             templateUrl: 'views/login.html',
@@ -32,6 +31,14 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
         .when('/profile/change-password', {
             templateUrl: 'views/user/change-password.html',
+            controller: 'AuthenticationController'
+        })
+        .when('/users/me', {
+            templateUrl: 'views/user/currentUser.html',
+            controller: 'AuthenticationController'
+        })
+        .when('/users', {
+            templateUrl: 'views/user/get-all-users.html',
             controller: 'AuthenticationController'
         })
         .otherwise({
