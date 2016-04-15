@@ -71,7 +71,7 @@ app.controller('AuthenticationController',
                 function success() {
                     usSpinnerService.stop('spinner-1');
                     notifyService.showInfo('Your password has been successfully changed');
-                    $location.path('/');
+                    $location.path('/home');
                 },
                 function error(error) {
                     notifyService.showError('Unable to change password. ' + error.data.message);
@@ -86,7 +86,7 @@ app.controller('AuthenticationController',
                 function success() {
                     usSpinnerService.stop('spinner-1');
                     notifyService.showInfo('All users');
-                    $location.path('/get-all-users');
+                    $location.path('/');
                 },
                 function error(error) {
                     notifyService.showError('Unable to get all users. ' + error.data.message);
@@ -99,7 +99,7 @@ app.controller('AuthenticationController',
             usSpinnerService.spin('spinner-1');
             authenticationService.getUserFullData($routeParams.username).then(
                 function (userData) {
-                    $scope.username=userData.name;
+                    $scope.username=userData.username;
                     $scope.userFullData = userData.data;
                     usSpinnerService.stop('spinner-1');
                     $location.path('/');

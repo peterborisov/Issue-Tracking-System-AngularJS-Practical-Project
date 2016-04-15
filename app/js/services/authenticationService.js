@@ -15,6 +15,11 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
         return $localStorage.currentUser != undefined;
     };
 
+    authenticationService.isAdmin = function () {
+        var currentUser = this.getCurrentUserData();
+        return (currentUser != undefined) && (currentUser.isAdmin);
+    };
+
     authenticationService.getHeaders = function () {
         return {
             Authorization: "Bearer " + $localStorage.currentUser.access_token
@@ -32,7 +37,7 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
     authenticationService.getAllUsers = function () {
         return $http({
             method: 'GET',
-            url: BASE_URL + '/users/',
+            url: BASE_URL + 'users',
             headers: this.getHeaders()
         })
     };
@@ -71,5 +76,6 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
         });
     };
 
+   
     return authenticationService;
 });

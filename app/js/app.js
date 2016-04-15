@@ -13,9 +13,13 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/', {
             templateUrl: 'views/home.html'
         })
-        .when('/home', {
+        .when('/dashboard', {
             templateUrl: 'views/dashboard.html',
-            controller: 'HomeController'
+            controller: 'AuthenticationController'
+        })
+        .when('/dashboard-admin', {
+            templateUrl: 'views/dashboard-admin.html',
+            controller: 'AuthenticationController'
         })
         .when('/login', {
             templateUrl: 'views/login.html',
@@ -37,9 +41,21 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'views/user/currentUser.html',
             controller: 'AuthenticationController'
         })
-        .when('/users', {
+        .when('users', {
             templateUrl: 'views/user/get-all-users.html',
-            controller: 'AuthenticationController'
+            controller: 'HomeController'
+        })
+        .when('/projects', {
+            templateUrl: 'views/projects/all-projects.html',
+            controller: 'ProjectsController'
+        })
+        .when('/projects/add', {
+            templateUrl: 'views/project/Add-new-project.html',
+            controller: 'ProjectsController'
+        })
+        .when('projects/:id/add-issue', {
+            templateUrl: 'views/issue/Add-new-issue.html',
+            controller: 'ProjectsController'
         })
         .otherwise({
             redirectTo: '/'
