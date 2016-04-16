@@ -25,7 +25,10 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
             Authorization: "Bearer " + $localStorage.currentUser.access_token
         };
     };
-
+    authenticationService.isAuthenticated=function () {
+        
+        return sessionStorage['access_token'] != null;
+    }
     authenticationService.getCurrentUserData = function () {
         return $http({
             method: 'GET',

@@ -1,8 +1,12 @@
 <div class="margin-top-100"></div>
-<h1 id="mainH1">Welcome  to Issue Tracking System</h1>
 <div ng-include="'views/navbar-header.html'"></div>
-<main id="wrapper">
-    <section ng-if="!isLogged" id="home-background-image-section">
+<main id="wrapper" ng-controller="AuthenticationController">
+    <section ng-if="!isLogged" class="home-background-image-section">
+        <h1 class="mainH1">Issue Tracking System</h1>
+        <img class="home-background-image" src="img/softuni-long-logo.png"/>
+    </section>
+    <section ng-if="isLogged" class="home-background-image-section">
+        <h1 class="mainH1">Use navigation menu on the top</h1>
         <img class="home-background-image" src="img/softuni-long-logo.png"/>
     </section>
 </main>

@@ -7,10 +7,10 @@ app.controller('AuthenticationController',
                 authenticationService.getCurrentUserData().then(
                     function (userData) {
                         usSpinnerService.stop('spinner-1');
-                        $scope.userData = userData.data;
+                        $scope.userData = userData;
                     },
                     function (error) {
-                        notifyService.showError('Unable to get current user data. ' + error.data.message);
+                        notifyService.showError('Unable to get current user data ' + error.data.message);
                         usSpinnerService.stop('spinner-1');
                     }
                 );
@@ -27,7 +27,7 @@ app.controller('AuthenticationController',
                     $location.path("/");
                 },
                 function error(error) {
-                    notifyService.showError("Unable to register." + error.data.message);
+                    notifyService.showError("Unable to register " + error.data.message);
                     usSpinnerService.stop('spinner-1');
                 }
             );
@@ -43,7 +43,7 @@ app.controller('AuthenticationController',
                     $location.path("/home");
                 },
                 function error(error) {
-                    notifyService.showError('Unsuccessful login' + error.data.message);
+                    notifyService.showError('Unsuccessful login ' + error.data.message);
                     usSpinnerService.stop('spinner-1');
                 }
             );
@@ -59,7 +59,7 @@ app.controller('AuthenticationController',
                     $location.path('/');
                 },
                 function error(error) {
-                    notifyService.showError("Unable to logout" + error.data.message);
+                    notifyService.showError("Unable to logout " + error.data.message);
                     usSpinnerService.stop('spinner-1');
                 }
             );
@@ -89,11 +89,11 @@ app.controller('AuthenticationController',
                     $location.path('/');
                 },
                 function error(error) {
-                    notifyService.showError('Unable to get all users. ' + error.data.message);
+                    notifyService.showError('Unable to get all users ' + error.data.message);
                     usSpinnerService.stop('spinner-1');
                 }
             )
-        }
+        };
 
         $scope.getUserFullData = function getUserFullData() {
             usSpinnerService.spin('spinner-1');

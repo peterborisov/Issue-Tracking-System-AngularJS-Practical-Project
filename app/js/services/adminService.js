@@ -9,7 +9,6 @@ app.factory('adminService', function ($http, baseServiceUrl, authenticationServi
                 headers: authenticationService.getHeaders(),
                 data: projectData
             };
-
             $http(addProjectsRequest).success(success).error(error);
         }
     }

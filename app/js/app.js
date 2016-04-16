@@ -41,9 +41,9 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'views/user/currentUser.html',
             controller: 'AuthenticationController'
         })
-        .when('users', {
+        .when('/users', {
             templateUrl: 'views/user/get-all-users.html',
-            controller: 'HomeController'
+            controller: 'AuthenticationController'
         })
         .when('/projects', {
             templateUrl: 'views/projects/all-projects.html',

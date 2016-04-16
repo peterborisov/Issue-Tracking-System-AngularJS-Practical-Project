@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('issuesService', function ($http, baseServiceUrl, authenticationService) {
+app.factory('issuesService', function ($http, BASE_URL, authenticationService) {
     return {
         addNewIssue: function (issueData, success, error) {
             var addIssueRequest = {

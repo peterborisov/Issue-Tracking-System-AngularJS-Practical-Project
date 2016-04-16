@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('usersService', function ($http, baseServiceUrl, authenticationService) {
+app.factory('usersService', function ($http, BASE_URL, authenticationService) {
     return {
         getAllUsers: function (success, error) {
             var getAllUsersRequest = {
