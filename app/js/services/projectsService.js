@@ -23,15 +23,6 @@ app.factory('projectsService', function ($http, BASE_URL, authenticationService)
             }
         },
 
-        getLabels: function (success, error) {
-            var getLabelsRequest = {
-                method: 'GET',
-                url: BASE_URL + 'labels/?filter=',
-                headers: authenticationService.getHeaders()
-            };
-            $http(getLabelsRequest).success(success).error(error);
-        },
-
         isAdmin: function () {
             var currentUser = authenticationService.getCurrentUserData();
             return (currentUser != undefined) && (currentUser.isAdmin);

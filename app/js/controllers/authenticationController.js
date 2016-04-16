@@ -22,7 +22,7 @@ app.controller('AuthenticationController',
             authenticationService.register(userData).then(
                 function success(serverData) {
                     usSpinnerService.stop('spinner-1');
-                    notifyService.showInfo('Successfully registered');
+                    notifyService.showInfo('Successfully registered ');
                     authenticationService.setCredentials(serverData.data);
                     $location.path("/");
                 },

@@ -8,7 +8,7 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
     };
 
     authenticationService.clearCredentials = function () {
-        $localStorage.$reset();
+       $localStorage.$reset();
     };
 
     authenticationService.isLoggedIn = function () {
@@ -26,9 +26,8 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
         };
     };
     authenticationService.isAuthenticated=function () {
-        
         return sessionStorage['access_token'] != null;
-    }
+    };
     authenticationService.getCurrentUserData = function () {
         return $http({
             method: 'GET',
@@ -37,13 +36,6 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
         })
     };
     
-    authenticationService.getAllUsers = function () {
-        return $http({
-            method: 'GET',
-            url: BASE_URL + 'users',
-            headers: this.getHeaders()
-        })
-    };
 
     authenticationService.login = function (user) {
         return $http({
@@ -79,6 +71,6 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
         });
     };
 
-   
+
     return authenticationService;
 });

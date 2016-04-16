@@ -23,24 +23,6 @@ app.controller('AdminController',
             }
         );
 
-        $scope.searchChar = '';
-        $scope.autoComplete = function () {
-            projectsService.getLabels(
-                function success(data) {
-                    $scope.labelsList = [];
-                    data.forEach(function (label) {
-                        $scope.labelsList.push(label.Name)
-                    });
-
-                    $scope.labelsList = $scope.labelsList.filter(function (e) {
-                        return e.indexOf($scope.searchChar) !== -1;
-                    });
-                },
-                function error(err) {
-                    notifyService.showError("labels loading failed", err);
-                });
-        };
-
         $scope.addProject = function (projectData, projectKey) {
             var labelsList = [];
             var prioritiesList = [];
