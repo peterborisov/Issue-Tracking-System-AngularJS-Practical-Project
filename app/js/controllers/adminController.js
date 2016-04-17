@@ -24,23 +24,7 @@ app.controller('AdminController',
         );
 
         $scope.addProject = function (projectData, projectKey) {
-            var labelsList = [];
-            var prioritiesList = [];
-
-            var stringLabels = projectData.Labels.split(', ');
-            stringLabels.forEach(function (element) {
-                labelsList.push({Name: element.trim()})
-            });
-
-            var stringPriorities = projectData.Priorities.split(', ');
-            stringPriorities.forEach(function (element) {
-                prioritiesList.push({Name: element.trim()})
-            });
-
             projectData.ProjectKey = projectKey;
-            projectData.Priorities = prioritiesList;
-            projectData.Labels = labelsList;
-
             adminService.addNewProject(projectData,
                 function success() {
                     notifyService.showInfo("Project added successfully");

@@ -2,6 +2,7 @@
 
 app.factory('projectsService', function ($http, BASE_URL, authenticationService) {
     return {
+
         getAllProjects: function (success, error) {
             var getAllProjectsRequest = {
                 method: 'GET',

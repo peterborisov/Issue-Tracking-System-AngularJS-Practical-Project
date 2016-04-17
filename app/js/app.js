@@ -46,7 +46,7 @@ app.config(['$routeProvider', function ($routeProvider) {
             controller: 'AuthenticationController'
         })
         .when('/projects', {
-            templateUrl: 'views/projects/all-projects.html',
+            templateUrl: 'views/project/all-projects.html',
             controller: 'ProjectsController'
         })
         .when('/projects/add', {

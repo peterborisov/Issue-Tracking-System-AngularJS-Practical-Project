@@ -3,8 +3,8 @@
 app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
     var authenticationService = {};
 
-    authenticationService.setCredentials = function (serverData) {
-        $localStorage.currentUser = serverData;
+    authenticationService.setCredentials = function (data) {
+        $localStorage.currentUser = data;
     };
 
     authenticationService.clearCredentials = function () {
@@ -25,17 +25,19 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
             Authorization: "Bearer " + $localStorage.currentUser.access_token
         };
     };
+
     authenticationService.isAuthenticated=function () {
         return sessionStorage['access_token'] != null;
     };
+
     authenticationService.getCurrentUserData = function () {
         return $http({
             method: 'GET',
             url: BASE_URL + 'Account/UserInfo',
             headers: this.getHeaders()
         })
+
     };
-    
 
     authenticationService.login = function (user) {
         return $http({

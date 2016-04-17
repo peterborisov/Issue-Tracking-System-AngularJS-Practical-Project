@@ -7,7 +7,8 @@ app.controller('ProjectsController', function ($scope,
                                                projectsService,
                                                notifyService,
                                                issuesService) {
-  
+    
+    
     projectsService.getAllProjects(
         function success(data) {
             $scope.allProjects = data;
@@ -26,17 +27,6 @@ app.controller('ProjectsController', function ($scope,
         }
     );
     $scope.addIssue = function (issueData) {
-        var labelsList = [];
-
-        var stringLabels = issueData.Labels.split(', ');
-        stringLabels.forEach(function (element) {
-            labelsList.push({Name: element.trim()})
-        });
-
-        issueData.Labels = labelsList;
-        issueData.PriorityId = parseInt(issueData.PriorityId);
-        issueData.ProjectId = parseInt(issueData.ProjectId);
-
         issuesService.addNewIssue(issueData,
             function success() {
                 notifyService.showInfo("Issue added successfully");
