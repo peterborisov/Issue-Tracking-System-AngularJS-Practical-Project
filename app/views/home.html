@@ -2,30 +2,74 @@
 <div ng-include="'views/navbar-header.html'"></div>
 <main id="wrapper" ng-controller="AuthenticationController">
     <section ng-if="!isLogged" class="home-background-image-section">
+        <div class="coverImg">
+            <img src="img/softuni-9.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="header">
+                <div class="clr"></div>
+            </div>
+            <div class="sp-container">
+                <div class="sp-content">
+                    <div class="sp-globe"></div>
+                    <h2 class="frame-1">Software University</h2>
+
+                    <h2 class="frame-2">AngularJS Practical Project</h2>
+
+                    <h2 class="frame-3">Peter Borisov</h2>
+
+                    <h2 class="frame-4">Issue Tracking System</h2>
+
+                    <h2 class="frame-5"><span>My first Angular project.</span> <span>Hope you will like it.</span> <span>Enjoy.</span></h2>
+                </div>
+            </div>
+        </div>
+
         <div class="logo">
-            <marquee direction="up" behavior="alternate" scrollamount="2" style="height:100px"><img src="img/foundation.jpg" alt=""></marquee>
+            <marquee direction="up" behavior="alternate" scrollamount="2" style="height:52px"><img src="img/foundation.jpg" alt=""></marquee>
         </div>
 
         <div id="mainH1text">
-            Issue Tracking System
-            <marquee WIDTH="42%" scrollamount="10" ><img src="img/softuni-long-logo.png" width="80%" height="50px"  border="0"></marquee>
-           AngularJS practical exam
+            <!--<marquee WIDTH="42%" scrollamount="10" ><img src="img/softuni-long-logo.png" width="80%" height="50px"  border="0"></marquee>-->
+        <marquee behavior="alternate" direction="left" scrollamount="6">
+            <img src="img/softuni-long-logo.png" width="30%" height="50px"  border="0">
+        </marquee>
+        </div>
 
-        <!--<marquee behavior="alternate" direction="left" scrollamount="10">-->
-            <!--<h1 class="mainH1" style="margin-top: 10px;margin-bottom: 330px">Issue Tracking System</h1>-->
-        <!--</marquee>-->
+        <!--<div class="container">-->
+            <!--<div class="homeButtons">-->
+                <!--<a href="#/login" class="btn btn-lg btn-success" style="float: left;width: 300px;margin-left: 100px">Login</a>-->
+                <!--<a href="#/register" class="btn btn-lg btn-success"-->
+                   <!--style="float: right;width: 300px;margin-right: 180px">Register</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    </section>
+    <section ng-if="isLogged" class="home-background-image-section">
+        <div class="coverImg">
+            <img src="img/softuni-12.jpg" alt="">
         </div>
 
         <div class="container">
-            <div class="homeButtons">
-                <a href="#/login" class="btn btn-lg btn-success" style="float: left;width: 300px;margin-left: 100px">Login</a>
-                <a href="#/register" class="btn btn-lg btn-success"
-                   style="float: right;width: 300px;margin-right: 180px">Register</a>
+            <div class="header">
+                <div class="clr"></div>
+            </div>
+            <div class="sp-container">
+                <div class="sp-content">
+                    <div class="sp-globe"></div>
+                    <h2 class="frame-1">Welcome to Issue tracking System</h2>
+
+                    <h2 class="frame-2">Angular Practical Project</h2>
+
+                    <h2 class="frame-3">Peter Borisov</h2>
+
+                    <h2 class="frame-4">And SoftUni</h2>
+
+                    <h2 class="frame-5"><span>For better results </span> <span>use the navigation menu</span> <span>on the top.</span></h2>
+
+                </div>
             </div>
         </div>
-    </section>
-    <section ng-if="isLogged" class="home-background-image-section">
-        <h1  style="text-align: center;margin-top: 100px;font-size: 30px;color: lightgrey">Use navigation menu on the top</h1>
+
     </section>
 </main>
 </div>

@@ -71,7 +71,7 @@ app.controller('AuthenticationController',
                 function success() {
                     usSpinnerService.stop('spinner-1');
                     notifyService.showInfo('Your password has been successfully changed');
-                    $location.path('/home');
+                    $location.path('/dashboard');
                 },
                 function error(error) {
                     notifyService.showError('Unable to change password. ' + error.data.message);

@@ -3,36 +3,18 @@
         <nav class="collapse navbar-collapse bs-navbar-collapse">
 
             <ul ng-if="!isLogged" class="nav navbar-nav navbar-right">
-                <div class="marquee">
-                    <div>
-                        <span>Login  or   Register</span>
-                        <span>Login  or   Register</span>
-                    </div>
-                </div>
+                <a href="#/login" style="margin-right: 30px;margin-top:20px;color: white">Login</a>
+                <a href="#/register" style="margin-right: 30px;color: white">Register</a>
             </ul>
 
             <ul ng-if="isLogged" class="nav navbar-nav navbar-right">
+                <li><a href="#/">Home</a></li>
                 <li><a href="#/dashboard-admin">Admin Dashboard</a></li>
                 <li><a href="#/dashboard">Dashboard</a></li>
                 <li><a href="#/projects">Projects</a></li>
-
-
-                <li class="header-data" ng-init="userData()">
-                    <a href="#/users/me">
-                        Current User
-                    </a>
-                </li>
-
+                <li class="header-data" ng-init="userData()"><a href="#/users/me">Current User</a></li>
                 <li class="site-logo"><a href="#/users">Users</a></li>
-
-                <li role="presentation" class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Settings <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#/profile/change-password" class="change-password nav-icon">Change Password</a>
-                        </li>
-                    </ul>
+                <li><a href="#/profile/change-password" class="change-password nav-icon">Change Password</a>
                 </li>
                 <li><a href="#/logout" ng-click="logout()">Logout</a></li>
             </ul>
