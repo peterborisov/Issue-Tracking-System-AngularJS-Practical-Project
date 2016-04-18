@@ -2,12 +2,30 @@
 <div ng-include="'views/navbar-header.html'"></div>
 <main id="wrapper" ng-controller="AuthenticationController">
     <section ng-if="!isLogged" class="home-background-image-section">
-        <h1 class="mainH1">Issue Tracking System</h1>
-        <img class="home-background-image" src="img/softuni-long-logo.png"/>
+        <div class="logo">
+            <marquee direction="up" behavior="alternate" scrollamount="2" style="height:100px"><img src="img/foundation.jpg" alt=""></marquee>
+        </div>
+
+        <div id="mainH1text">
+            Issue Tracking System
+            <marquee WIDTH="42%" scrollamount="10" ><img src="img/softuni-long-logo.png" width="80%" height="50px"  border="0"></marquee>
+           AngularJS practical exam
+
+        <!--<marquee behavior="alternate" direction="left" scrollamount="10">-->
+            <!--<h1 class="mainH1" style="margin-top: 10px;margin-bottom: 330px">Issue Tracking System</h1>-->
+        <!--</marquee>-->
+        </div>
+
+        <div class="container">
+            <div class="homeButtons">
+                <a href="#/login" class="btn btn-lg btn-success" style="float: left;width: 300px;margin-left: 100px">Login</a>
+                <a href="#/register" class="btn btn-lg btn-success"
+                   style="float: right;width: 300px;margin-right: 180px">Register</a>
+            </div>
+        </div>
     </section>
     <section ng-if="isLogged" class="home-background-image-section">
-        <h1 class="mainH1">Use navigation menu on the top</h1>
-        <img class="home-background-image" src="img/softuni-long-logo.png"/>
+        <h1  style="text-align: center;margin-top: 100px;font-size: 30px;color: lightgrey">Use navigation menu on the top</h1>
     </section>
 </main>
 </div>

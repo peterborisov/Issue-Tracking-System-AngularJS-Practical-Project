@@ -1,22 +1,36 @@
-<div class="navbar navbar-inverse">
-    <div ng-include="'views/navbar-header.html'"></div>
-
+<div ng-include="'views/navbar-header.html'"></div>
+<div class="margin-top-100"></div>
+<div class="container">
+    <div class="page-header">
+        <h1>Projects</h1>
+    </div>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="text-center">All Projects <span class="fa fa-edit pull-right bigicon"></span></h4>
+            </div>
+            <div class="panel-body text-center">
+                <table id="all-projects" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th class="col-md-2"> Name</th>
+                        <th class="col-md-2"> Key</th>
+                        <th class="col-md-4">Description</th>
+                        <th class="col-md-2"> Leader</th>
+                        <th class="col-md-2">Update/Add Issue</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="project in getAllProjects">
+                        <td>{{project.Name}}</td>
+                        <td>{{project.ProjectKey}}</td>
+                        <td class="all-projects-description">{{project.Description}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#/projects/edit" class="btn btn-lg btn-primary" style="margin-left: 20px;margin-bottom: 20px">Edit</a>
+            <a href="#/projects/add-issue" class="btn btn-lg btn-primary" style="margin-bottom: 20px">Add Issue</a>
+        </div>
+    </div>
 </div>
-<table class="table table-striped table-hover ">
-    <thead>
-    <tr>
-        <th>Project Name</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <tr ng-repeat="project in allProjects">
-        <td>{{project}}
-            <a href="#/projects/{{project}}" class="btn btn-primary btn-sm">View</a>
-        </td>
-        <td>{{project}}
-            <a href="#/projects/{{project}}" class="btn btn-primary btn-sm">View</a>
-        </td>
-    </tr>
-    </tbody>
-</table>

@@ -3,8 +3,12 @@
         <nav class="collapse navbar-collapse bs-navbar-collapse">
 
             <ul ng-if="!isLogged" class="nav navbar-nav navbar-right">
-                <li><a href="#/register">Sign up</a></li>
-                <li><a href="#/login">Login</a></li>
+                <div class="marquee">
+                    <div>
+                        <span>Login  or   Register</span>
+                        <span>Login  or   Register</span>
+                    </div>
+                </div>
             </ul>
 
             <ul ng-if="isLogged" class="nav navbar-nav navbar-right">

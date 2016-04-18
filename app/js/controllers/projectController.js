@@ -7,8 +7,7 @@ app.controller('ProjectsController', function ($scope,
                                                projectsService,
                                                notifyService,
                                                issuesService) {
-    
-    
+
     projectsService.getAllProjects(
         function success(data) {
             $scope.allProjects = data;
@@ -26,7 +25,7 @@ app.controller('ProjectsController', function ($scope,
             notifyService.showError("Project loading failed", err);
         }
     );
-    $scope.addIssue = function (issueData) {
+    issuesService.addIssue = function (issueData) {
         issuesService.addNewIssue(issueData,
             function success() {
                 notifyService.showInfo("Issue added successfully");
@@ -34,6 +33,17 @@ app.controller('ProjectsController', function ($scope,
             },
             function error(err) {
                 notifyService.showError("Issue add failed", err);
+            }
+        )
+    };
+    projectsService.addNewProject = function (projectData) {
+        projectsService.addNewProject(projectData,
+            function success() {
+                notifyService.showInfo("Project added successfully");
+                $location.path("/");
+            },
+            function error(err) {
+                notifyService.showError("Project add failed", err);
             }
         )
     }
