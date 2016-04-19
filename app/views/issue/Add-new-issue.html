@@ -1,8 +1,7 @@
 <div ng-include="'views/navbar-header.html'"></div>
-
 <body>
-<div class=jumbotron>
-<h2 style="margin-top: 0"> Add new Issue</h2>
+<div class="col-md-8 col-md-offset-2 border">
+    <h2 style="margin-top: 0"> Add new Issue</h2>
 <form>
 <div class="form-group">
     <label for="exampleInputEmail1">Title</label>
@@ -46,9 +45,15 @@
     <label for="exampleInputPassword1">Description</label>
     <textarea class="form-control" placeholder="Description"></textarea>
   </div>
-  <button type="submit" class="btn btn-lg btn-success">Add Issue</button>
-    <a href="#/dashboard-admin" class="btn btn-lg btn-success">Cancel</a>
+    <div class="form-group">
+        <div class="col-lg-8 col-lg-offset-4">
+            <button type="submit" class="btn btn-lg btn-success"
+                    ng-click="addIssue()">Add Issue
+            </button>
+            <a href="#/dashboard-admin" class="btn btn-lg btn-success">Cancel</a>
+        </div>
+    </div>
+
 </form>
 </div>
 </body>
-</html>
