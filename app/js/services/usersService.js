@@ -5,7 +5,7 @@ app.factory('usersService', function ($http, BASE_URL, authenticationService) {
         getAllUsers: function (success, error) {
             var getAllUsersRequest = {
                 method: 'GET',
-                url: BASE_URL + 'users',
+                url: BASE_URL + 'users/',
                 headers: authenticationService.getHeaders()
             };
 

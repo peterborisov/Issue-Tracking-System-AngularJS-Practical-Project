@@ -12,12 +12,23 @@
 .col-md-3 {
   margin-top: 120px;
   margin-left: 500px;
+  border-radius: 5px;
+  background-color: rgba(12, 12, 12, 0.6);
+  border: none;
+  color: lightgrey;
+  font-weight: lighter;
+  font-size: 18px;
 }
 
 .col-md-4 {
   margin-top: 100px;
   margin-left: 450px;
-  background: lightgrey;
+  border-radius: 5px;
+  background-color: rgba(12, 12, 12, 0.6);
+border: none;
+  color: lightgrey;
+  font-weight: lighter;
+  font-size: 18px;
 }
 
 .jumbotron {
@@ -27,10 +38,12 @@
   height: 100%;
   width: 80%;
 }
-.well{
+
+.well {
   margin-left: 165px;
   margin-top: 120px;
 }
+
 .coverImg {
   height: 100%;
   width: 100%;
@@ -45,6 +58,7 @@
     height: 100%;
   }
 }
+
 .btn {
   background: rgb(234, 79, 28); /* Old browsers */
   background: -moz-linear-gradient(top, rgba(234, 79, 28, 1) 0%, rgba(89, 0, 0, 1) 62%); /* FF3.6-15 */
@@ -60,37 +74,39 @@
   width: 70%;
   height: 40px;
   font-family: "Bookman", Georgia, "Times New Roman", serif;
-  color: #a7cfdf;
   font-size: 25px;
+  text-align: center;
 }
-#info{
+
+#info {
   margin-top: 100px;
   text-align: center;
-  p{
+  p {
     color: white;
     font-size: 26px;
   }
 }
-.col-md-8{
+
+.col-md-8 {
   margin-top: 50px;
-  color:black;
+  color: black;
   font-weight: 100;
   border: none;
 }
-.form-group{
+
+.form-group {
   margin-bottom: 10px;
   height: auto;
 }
-.pull-right{
+
+.pull-right {
   margin-top: 43px;
 }
-body {
-  background: lightgrey;
-  height: auto;
 
-  .col-md-3, .col-md-4 {
-    border-radius: 5px;
-  }
+body {
+  height: auto;
+  font-family: 'Electrolize', sans-serif;
+  background-color: rgba(12, 12, 12, 0.6);
   .main {
     margin: 0px auto;
     width: 100%;
@@ -166,7 +182,6 @@ body {
   }
 }
 
-
 @font-face {
   font-family: 'Electrolize';
   font-style: normal;
@@ -174,26 +189,24 @@ body {
   src: local('Electrolize'), local('Electrolize-Regular'), url(http://themes.googleusercontent.com/static/fonts/electrolize/v2/DDy9sgU2U7S4xAwH5thnJ4bN6UDyHWBl620a-IRfuBk.woff) format('woff');
 }
 
-body {
-  font-family: 'Electrolize';
-}
-
-.container{
+.container {
+  height: 100%;
   width: 100%;
   position: relative;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 a {
-  text-decoration:none;
+  text-decoration: none;
 }
 
-h1.main,p.demos {
+h1.main, p.demos {
   -webkit-animation-delay: 18s;
   -moz-animation-delay: 18s;
   -ms-animation-delay: 18s;
   animation-delay: 18s;
 }
+
 .sp-container {
   position: fixed;
   top: 0px;
@@ -203,6 +216,7 @@ h1.main,p.demos {
   z-index: 0;
 
 }
+
 .sp-content {
   position: absolute;
   width: 100%;
@@ -211,6 +225,7 @@ h1.main,p.demos {
   top: 0px;
   z-index: 1000;
 }
+
 .sp-container h2 {
   position: absolute;
   top: 50%;
@@ -221,29 +236,34 @@ h1.main,p.demos {
   width: 100%;
   text-align: center;
   color: transparent;
+  background-color: rgba(12, 12, 12, 0.2);
   -webkit-animation: blurFadeInOut 3s ease-in backwards;
   -moz-animation: blurFadeInOut 3s ease-in backwards;
   -ms-animation: blurFadeInOut 3s ease-in backwards;
   animation: blurFadeInOut 3s ease-in backwards;
 }
+
 .sp-container h2.frame-1 {
   -webkit-animation-delay: 0s;
   -moz-animation-delay: 0s;
   -ms-animation-delay: 0s;
   animation-delay: 0s;
 }
+
 .sp-container h2.frame-2 {
   -webkit-animation-delay: 3s;
   -moz-animation-delay: 3s;
   -ms-animation-delay: 3s;
   animation-delay: 3s;
 }
+
 .sp-container h2.frame-3 {
   -webkit-animation-delay: 6s;
   -moz-animation-delay: 6s;
   -ms-animation-delay: 6s;
   animation-delay: 6s;
 }
+
 .sp-container h2.frame-4 {
   font-size: 55px;
   -webkit-animation-delay: 9s;
@@ -251,6 +271,7 @@ h1.main,p.demos {
   -ms-animation-delay: 9s;
   animation-delay: 9s;
 }
+
 .sp-container h2.frame-5 {
   -webkit-animation: none;
   -moz-animation: none;
@@ -259,6 +280,7 @@ h1.main,p.demos {
   color: transparent;
   text-shadow: 0px 0px 1px #fff;
 }
+
 .sp-container h2.frame-5 span {
   -webkit-animation: blurFadeIn 3s ease-in 12s backwards;
   -moz-animation: blurFadeIn 1s ease-in 12s backwards;
@@ -267,18 +289,21 @@ h1.main,p.demos {
   color: transparent;
   text-shadow: 0px 0px 1px #fff;
 }
+
 .sp-container h2.frame-5 span:nth-child(2) {
   -webkit-animation-delay: 13s;
   -moz-animation-delay: 13s;
   -ms-animation-delay: 13s;
   animation-delay: 13s;
 }
+
 .sp-container h2.frame-5 span:nth-child(3) {
   -webkit-animation-delay: 14s;
   -moz-animation-delay: 14s;
   -ms-animation-delay: 14s;
   animation-delay: 14s;
 }
+
 .sp-globe {
   position: absolute;
   width: 100%;
@@ -298,6 +323,7 @@ h1.main,p.demos {
   -ms-transform: scale(5);
   transform: scale(5);
 }
+
 .sp-circle-link {
   position: absolute;
   left: 50%;
@@ -323,178 +349,191 @@ h1.main,p.demos {
   -ms-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg);
 }
+
 .sp-circle-link:hover {
   background: #85373b;
   color: #fff;
 }
+
 /**/
-@-webkit-keyframes blurFadeInOut{
-  0%{
+@-webkit-keyframes blurFadeInOut {
+  0% {
     opacity: 0;
     text-shadow: 0px 0px 40px #fff;
     -webkit-transform: scale(1.3);
   }
-  20%,75%{
+  20%, 75% {
     opacity: 1;
     text-shadow: 0px 0px 1px #fff;
     -webkit-transform: scale(1);
   }
-  100%{
+  100% {
     opacity: 0;
     text-shadow: 0px 0px 50px #fff;
     -webkit-transform: scale(0);
   }
 }
-@-webkit-keyframes blurFadeIn{
-  0%{
+
+@-webkit-keyframes blurFadeIn {
+  0% {
     opacity: 0;
     text-shadow: 0px 0px 40px #fff;
     -webkit-transform: scale(1.3);
   }
-  50%{
+  50% {
     opacity: 0.5;
     text-shadow: 0px 0px 10px #fff;
     -webkit-transform: scale(1.1);
   }
-  100%{
+  100% {
     opacity: 1;
     text-shadow: 0px 0px 1px #fff;
     -webkit-transform: scale(1);
   }
 }
-@-webkit-keyframes fadeInBack{
-  0%{
+
+@-webkit-keyframes fadeInBack {
+  0% {
     opacity: 0;
     -webkit-transform: scale(0);
   }
-  50%{
+  50% {
     opacity: 0.4;
     -webkit-transform: scale(2);
   }
-  100%{
+  100% {
     opacity: 0.2;
     -webkit-transform: scale(5);
   }
 }
-@-webkit-keyframes fadeInRotate{
-  0%{
+
+@-webkit-keyframes fadeInRotate {
+  0% {
     opacity: 0;
     -webkit-transform: scale(0) rotate(360deg);
   }
-  100%{
+  100% {
     opacity: 1;
     -webkit-transform: scale(1) rotate(0deg);
   }
 }
+
 /**/
-@-moz-keyframes blurFadeInOut{
-  0%{
+@-moz-keyframes blurFadeInOut {
+  0% {
     opacity: 0;
     text-shadow: 0px 0px 40px #fff;
     -moz-transform: scale(1.3);
   }
-  20%,75%{
+  20%, 75% {
     opacity: 1;
     text-shadow: 0px 0px 1px #fff;
     -moz-transform: scale(1);
   }
-  100%{
+  100% {
     opacity: 0;
     text-shadow: 0px 0px 50px #fff;
     -moz-transform: scale(0);
   }
 }
-@-moz-keyframes blurFadeIn{
-  0%{
+
+@-moz-keyframes blurFadeIn {
+  0% {
     opacity: 0;
     text-shadow: 0px 0px 40px #fff;
     -moz-transform: scale(1.3);
   }
-  100%{
+  100% {
     opacity: 1;
     text-shadow: 0px 0px 1px #fff;
     -moz-transform: scale(1);
   }
 }
-@-moz-keyframes fadeInBack{
-  0%{
+
+@-moz-keyframes fadeInBack {
+  0% {
     opacity: 0;
     -moz-transform: scale(0);
   }
-  50%{
+  50% {
     opacity: 0.4;
     -moz-transform: scale(2);
   }
-  100%{
+  100% {
     opacity: 0.2;
     -moz-transform: scale(5);
   }
 }
-@-moz-keyframes fadeInRotate{
-  0%{
+
+@-moz-keyframes fadeInRotate {
+  0% {
     opacity: 0;
     -moz-transform: scale(0) rotate(360deg);
   }
-  100%{
+  100% {
     opacity: 1;
     -moz-transform: scale(1) rotate(0deg);
   }
 }
+
 /**/
-@keyframes blurFadeInOut{
-  0%{
+@keyframes blurFadeInOut {
+  0% {
     opacity: 0;
     text-shadow: 0px 0px 40px #fff;
     transform: scale(1.3);
   }
-  20%,75%{
+  20%, 75% {
     opacity: 1;
     text-shadow: 0px 0px 1px #fff;
     transform: scale(1);
   }
-  100%{
+  100% {
     opacity: 0;
     text-shadow: 0px 0px 50px #fff;
     transform: scale(0);
   }
 }
-@keyframes blurFadeIn{
-  0%{
+
+@keyframes blurFadeIn {
+  0% {
     opacity: 0;
     text-shadow: 0px 0px 40px #fff;
     transform: scale(1.3);
   }
-  50%{
+  50% {
     opacity: 0.5;
     text-shadow: 0px 0px 10px #fff;
     transform: scale(1.1);
   }
-  100%{
+  100% {
     opacity: 1;
     text-shadow: 0px 0px 1px #fff;
     transform: scale(1);
   }
 }
-@keyframes fadeInBack{
-  0%{
+
+@keyframes fadeInBack {
+  0% {
     opacity: 0;
     transform: scale(0);
   }
-  50%{
+  50% {
     opacity: 0.4;
     transform: scale(2);
   }
-  100%{
+  100% {
     opacity: 0.2;
     transform: scale(5);
   }
 }
-@keyframes fadeInRotate{
-  0%{
+
+@keyframes fadeInRotate {
+  0% {
     opacity: 0;
     transform: scale(0) rotate(360deg);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: scale(1) rotate(0deg);
   }

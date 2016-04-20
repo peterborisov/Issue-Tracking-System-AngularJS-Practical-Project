@@ -11,10 +11,10 @@ app.controller('ProjectsController', function ($scope,
     projectsService.getAllProjects(
         function success(data) {
             $scope.allProjects = data;
-        },
-        function error(err) {
-            notifyService.showError("Projects loading failed", err);
         }
+        // function error(err) {
+        //     notifyService.showError("Projects loading failed", err);
+        // }
     );
 
     projectsService.getProjectById($routeParams.id,
@@ -40,7 +40,7 @@ app.controller('ProjectsController', function ($scope,
         projectsService.addNewProject(projectData,
             function success() {
                 notifyService.showInfo("Project added successfully");
-                $location.path("/");
+                $location.path("#/projects");
             },
             function error(err) {
                 notifyService.showError("Project add failed", err);

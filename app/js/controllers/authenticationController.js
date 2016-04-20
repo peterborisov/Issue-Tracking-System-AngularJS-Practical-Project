@@ -1,6 +1,7 @@
 app.controller('AuthenticationController',
     function ($scope, $location, $rootScope, authenticationService, notifyService, $localStorage, usSpinnerService) {
         $scope.isLogged = authenticationService.isLoggedIn();
+        $scope.authenticationService=authenticationService;
         if ($scope.isLogged) {
             $scope.userData = function () {
                 usSpinnerService.spin('spinner-1');
@@ -80,19 +81,13 @@ app.controller('AuthenticationController',
             )
         };
 
-        $scope.getAllUsers = function (userData) {
-            usSpinnerService.spin('spinner-1');
-            authenticationService.getAllUsers(userData).then(
-                function success() {
-                    usSpinnerService.stop('spinner-1');
-                    notifyService.showInfo('All users');
-                    $location.path('/');
-                },
-                function error(error) {
-                    notifyService.showError('Unable to get all users ' + error.data.message);
-                    usSpinnerService.stop('spinner-1');
-                }
-            )
+        $scope.getAllUsers=function () {
+            if (authenticationService.isAuthenticated()) {
+                usersService.getAllUsers()
+                    .then(function(users) {
+                        $scope.allUsers = users;
+                    });
+            }
         };
 
         $scope.getUserFullData = function getUserFullData() {
