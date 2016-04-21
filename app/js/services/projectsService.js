@@ -1,32 +1,43 @@
 'use strict';
 
-app.factory('projectsService', function ($http, BASE_URL, authenticationService) {
-    return {
-        getAllProjects: function (success, error) {
-            var getAllProjectsRequest = {
-                method: 'GET',
-                url: BASE_URL + 'projects',
+app.factory('projectsService',['$http','BASE_URL','authenticationService',
+    function ($http, BASE_URL,authenticationService) {
+
+        var projectsService = {};
+
+        projectsService.getAllProjects = function(){
+            return $http({
+                url :  "http://softuni-issue-tracker.azurewebsites.net/projects",
+                method : "GET",
                 headers: authenticationService.getHeaders()
-            };
+            });
+        };
 
-            $http(getAllProjectsRequest).success(success).error(error);
-        },
+        projectsService.getProjectById = function(id){
+            return $http({
+                url : BASE_URL + "/Project/"+ id,
+                method : "GET",
+                headers: authenticationService.getHeaders()
+            });
+        };
 
-        getProjectById: function (id, success, error) {
-            if (id) {
-                var getProjectRequest = {
-                    method: 'GET',
-                    url: BASE_URL + 'projects/' + id,
-                    headers: authenticationService.getHeaders()
-                };
-                $http(getProjectRequest).success(success).error(error);
-            }
-        },
+        projectsService.addProject = function(projectData){
+            return $http({
+                url : BASE_URL + "/Project",
+                method : "POST",
+                headers: authenticationService.getHeaders(),
+                data: projectData
+            });
+        };
 
-        isAdmin: function () {
-            var currentUser = authenticationService.getCurrentUserData();
-            return (currentUser != undefined) && (currentUser.isAdmin);
-        }
+        projectsService.editProject = function(id , projectData){
+            return $http({
+                url : BASE_URL + "/Project/"+id,
+                method : "PUT",
+                headers: authenticationService.getHeaders(),
+                data : projectData
+            });
+        };
 
-    }
-});
+        return projectsService;
+    }]);

@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('adminService', function ($http, baseServiceUrl, authenticationService) {
+app.factory('adminService', function ($http, BASE_URL, authenticationService) {
     return {
         addNewProject: function (projectData, success, error) {
             var addProjectsRequest = {

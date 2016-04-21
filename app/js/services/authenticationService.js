@@ -73,6 +73,14 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
         });
     };
 
-
+    authenticationService.userInfo = function (userData) {
+        return $http({
+            method: 'GET',
+            url: BASE_URL.substr(0,BASE_URL.length-3) + '/users/me',
+            data: userData,
+            headers: this.getHeaders()
+        });
+        console.log()
+    };
     return authenticationService;
 });
