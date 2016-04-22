@@ -61,6 +61,10 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'views/project/Edit-project.html',
             controller: 'ProjectsController'
         })
+        .when('/projects/edit-issue', {
+            templateUrl: 'views/issue/edit-issue.html',
+            controller: 'ProjectsController'
+        })
         .when('/issues/add', {
             templateUrl: 'views/issue/Add-new-issue.html',
             controller: 'ProjectsController'
