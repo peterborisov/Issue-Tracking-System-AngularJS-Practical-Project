@@ -538,7 +538,7 @@ h1.main, p.demos {
     transform: scale(0) rotate(360deg);
   }
   100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
 }
