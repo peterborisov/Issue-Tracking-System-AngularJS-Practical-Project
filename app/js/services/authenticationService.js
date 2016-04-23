@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
+app.factory('authenticationService', function ($http, BASE_URL, $localStorage,$q) {
     var authenticationService = {};
 
     authenticationService.setCredentials = function (data) {
@@ -33,7 +33,7 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
     authenticationService.getCurrentUserData = function () {
         return $http({
             method: 'GET',
-            url: BASE_URL + 'Account/UserInfo',
+            url: BASE_URL + 'users/me',
             headers: this.getHeaders()
         })
 
@@ -42,24 +42,29 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
     authenticationService.login = function (user) {
         return $http({
             method: 'POST',
-            url: BASE_URL + 'Token',
+            url: BASE_URL + 'api/Token',
             data: "userName=" + user.username + "&password=" + user.password +
             "&grant_type=password"
         })
     };
 
-    authenticationService.register = function (userData) {
-        return $http({
-            method: 'POST',
-            url: BASE_URL + 'Account/Register',
-            data: userData
-        })
+    authenticationService.register = function (user) {
+        var deferred = $q.defer();
+
+        $http.post(BASE_URL+'api/Account/Register',user)
+            .then(function(success){
+                deferred.resolve(success.data);
+            }, function (error) {
+                deferred.reject(error.data);
+            });
+
+        return deferred.promise;
     };
 
     authenticationService.logout = function () {
         return $http({
             method: 'POST',
-            url: BASE_URL + 'Account/Logout',
+            url: BASE_URL + 'api/Account/Logout',
             headers: this.getHeaders()
         });
     };
@@ -67,20 +72,12 @@ app.factory('authenticationService', function ($http, BASE_URL, $localStorage) {
     authenticationService.changePassword = function (userData) {
         return $http({
             method: 'POST',
-            url: BASE_URL + 'Account/ChangePassword',
+            url: BASE_URL + 'api/Account/ChangePassword',
             data: userData,
             headers: this.getHeaders()
         });
     };
 
-    authenticationService.userInfo = function (userData) {
-        return $http({
-            method: 'GET',
-            url: BASE_URL.substr(0,BASE_URL.length-3) + '/users/me',
-            data: userData,
-            headers: this.getHeaders()
-        });
-        console.log()
-    };
+
     return authenticationService;
 });
